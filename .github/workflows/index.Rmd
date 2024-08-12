@@ -1,0 +1,21 @@
+---
+title: "ggplot demo"
+output: html_document
+date: "2024-08-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Today is `r Sys.Date()` and it is currentl `r Sys.time()`
+
+```{r}
+library(ggplot2)
+
+ggplot(diamonds) + 
+  aes(x = carat, color = cut, y = price) + 
+  geom_smooth(se = FALSE, method = 'lm')
+
+```
+
